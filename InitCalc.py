@@ -30,6 +30,7 @@ S = (mTo*9.81)/(CLC * 0.5 * rho * V**2)
 b = np.sqrt(S*ar)
 Cmgc = np.sqrt(S/ar)
 Re = (rho * V * Cmgc)/mu
+print(f"Mean cord at Cruise: {Cmgc[-1]:.2f} m")
 print(f"Wing Span at Cruise: {b[-1]:.2f} m")
 print(f"Wing Area at Cruise: {S[-1]:.2f} m^2")
 print(f"Reynolds Number: {Re[0]:.0f}")
