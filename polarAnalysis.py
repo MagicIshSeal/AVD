@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 files = [
     'CLARK Y AIRFOIL_T1_Re2.392_M0.00_N9.0.txt',
     'EPPLER 748 AIRFOIL_T1_Re2.392_M0.00_N9.0.txt',
-    'NASA NLF1 416 T1_Re2.392_M0.00_N9.0.txt'
+    'NASA NLF1 416 AIRFOIL_T1_Re2.392_M0.00_N9.0.txt'
 ]
 
 # Read data from each file
