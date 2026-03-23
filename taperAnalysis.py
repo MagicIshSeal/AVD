@@ -91,9 +91,12 @@ ax_end_alpha.tick_params(labelsize=11)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
 
 # ── Print peak performance table ──────────────────────────────────────────────
-print(f"\n{'Label':<22} {'Max L/D':>9} {'@ alpha':>9} {'Max CL³/CD²':>13} {'@ alpha':>9}")
-print("-" * 65)
+print(f"\n{'Label':<22} {'Max CL':>9} {'@ alpha':>9} {'Max Cl/Cd':>9} {'@ alpha':>9} {'Max CL³/CD²':>13} {'@ alpha':>9}")
+print("-" * 86)
 for label, df in dataframes.items():
+    max_cl = df['CL'].max()
+    a_max_cl = df.loc[df['CL'].idxmax(), 'alpha']
+
     LD = df['CL'] / df['CD']
     pos = LD[LD > 0]
     max_ld   = pos.max()
@@ -103,6 +106,6 @@ for label, df in dataframes.items():
     max_e   = pos3.max()
     a_max_e = df.loc[pos3.idxmax(), 'alpha']
 
-    print(f"{label:<22} {max_ld:>9.2f} {a_max_ld:>8.2f}° {max_e:>13.2f} {a_max_e:>8.2f}°")
+    print(f"{label:<22} {max_cl:>9.4f} {a_max_cl:>8.2f}° {max_ld:>9.2f} {a_max_ld:>8.2f}° {max_e:>13.2f} {a_max_e:>8.2f}°")
 
 plt.show()
